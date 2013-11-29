@@ -18,7 +18,7 @@ public class ProductInvetory {
     public void printInvetory() {
         float value = 0;
         for (Product product : invetory) {
-            System.out.printf("%d\t%s\t%.02f each", product.getId(),
+            System.out.printf("%d\t%s\t%.02f \n", product.getId(),
                     product.getQuantity(),
                     product.getPrice());
             value += (product.getPrice() * product.getQuantity());

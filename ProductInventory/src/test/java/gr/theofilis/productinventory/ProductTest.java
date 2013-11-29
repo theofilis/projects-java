@@ -9,14 +9,9 @@ import org.junit.Test;
 
 /**
  *
- * @author as_tr_000
+ * @author Theofilis George
  */
 public class ProductTest extends TestCase {
-
-    @org.junit.Test
-    public void testAdd() {
-        fail("Not Implement");
-    }
 
     /**
      * Test of getId method, of class Product.
@@ -28,8 +23,6 @@ public class ProductTest extends TestCase {
         long expResult = 0L;
         long result = instance.getId();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -41,8 +34,7 @@ public class ProductTest extends TestCase {
         long id = 0L;
         Product instance = new Product();
         instance.setId(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         assertEquals(id, instance.getId());
     }
 
     /**
@@ -55,8 +47,6 @@ public class ProductTest extends TestCase {
         float expResult = 0.0F;
         float result = instance.getPrice();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,8 +58,7 @@ public class ProductTest extends TestCase {
         float price = 0.0F;
         Product instance = new Product();
         instance.setPrice(price);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         assertEquals(price, instance.getPrice());
     }
 
     /**
@@ -82,8 +71,6 @@ public class ProductTest extends TestCase {
         int expResult = 0;
         int result = instance.getQuantity();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,24 +79,36 @@ public class ProductTest extends TestCase {
     @Test
     public void testSetQuantity() {
         System.out.println("setQuantity");
-        int quantity = 0;
+        int quantity = 1;
         Product instance = new Product();
         instance.setQuantity(quantity);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(quantity, instance.getQuantity());
     }
 
     /**
      * Test of updateQuantity method, of class Product.
      */
     @Test
-    public void testUpdateQuantity() throws Exception {
+    public void testUpdateAddQuantity() throws Exception {
         System.out.println("updateQuantity");
         String method = "add";
         Product instance = new Product();
+        int exResult = instance.getQuantity() + 1;
         instance.updateQuantity(method);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(exResult, instance.getQuantity());
+    }
+    
+        /**
+     * Test of updateQuantity method, of class Product.
+     */
+    @Test
+    public void testUpdateSubtractQuantity() throws Exception {
+        System.out.println("updateQuantity");
+        String method = "subtract";
+        Product instance = new Product(1, 1, 2);
+        int exResult = instance.getQuantity() - 1;
+        instance.updateQuantity(method);
+        assertEquals(exResult, instance.getQuantity());
     }
 
 }

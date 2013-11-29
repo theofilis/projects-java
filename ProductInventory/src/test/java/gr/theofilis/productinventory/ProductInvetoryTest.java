@@ -15,7 +15,10 @@ public class ProductInvetoryTest extends TestCase {
 
     @org.junit.Test
     public void testAdd() {
-        fail("Not Implement");
+        System.out.println("add");
+        ProductInvetory invetory = new ProductInvetory();
+        invetory.add(new Product(1.5f, 1l, 10));
+        invetory.printInvetory();
     }
 
     /**
@@ -24,9 +27,10 @@ public class ProductInvetoryTest extends TestCase {
     @Test
     public void testPrintInvetory() {
         System.out.println("printInvetory");
-        ProductInvetory instance = new ProductInvetory();
-        instance.printInvetory();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        ProductInvetory invetory = new ProductInvetory();
+        invetory.add(new Product(1.5f, 1l, 10));
+        invetory.add(new Product(3f, 2l, 20));
+        invetory.add(new Product(5f, 3l, 10));
+        invetory.printInvetory();
     }
 }
